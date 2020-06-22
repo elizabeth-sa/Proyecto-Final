@@ -1,0 +1,49 @@
+Pagina de inicio- Btono registrarse, iniciar sesion, admin, contestar
+pagina de registrarse- botones de profesor y alumno con todas las cosas feas que implican
+pagina de iniciar - Clave o correo, contraseña
+
+
+Pagina de perfil con todo lo que implica
+
+Pagina de elegir crear o responder
+Pagina de responder encuesta con todo lo que implica.
+pagina de crear CTLQI
+
+
+Modal de reportar CTLQI
+
+README
+
+HTML/PHP
+  Comentarios en los archivos
+
+BD:
+  "BD_ElAullido.sql"
+  Normalización
+  UML
+  Entidad-relación con notación de pata de gallo
+  Diccionario
+  Lenguajes de consulta DDL, DML y DCL
+  Usuario que no sea root
+
+JS
+  instrucciones síncronas y asíncronas, así como peticiones asíncronas al servidor.
+  jQuery 3 y Chart.js.
+
+Diseño
+  Paletas de colores
+  Temas (Modo Claro-Modo Oscuro)
+  Bocetos de Figma
+  Logo
+  Un poquito de Bootsrap
+  Distintos selectores
+  Todo en cascada
+  Adaptabilidad
+  Media Queries y diseño adaptable.
+  Nav a discusion (Carrousel o Navbar, o lo que se requiera)
+  NAV -  Encuesta (crear-reportar-contestar), Perfil, créditos (modal)
+
+Seguridad
+  Inyeciones SQL
+  Distinción de usuarios
+  Hasheo de contraseñas, nombres y correos
