@@ -1,0 +1,83 @@
+html,body{
+  margin:0px;
+  height:100%;
+  width: 100%;
+}
+
+body{
+  background:
+    linear-gradient(127deg, #A3DBC2, rgba(0,0,0,0) 70.71%),
+    linear-gradient(217deg, #3D9BA5, rgba(0,0,0,0) 70.71%),
+    linear-gradient(336deg, #126E9D, rgba(0,0,0,0) 70.71%);
+  background-size: 100% 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  /*font-family: 'Bungee Inline', cursive;
+  font-size: 30px;*/
+  margin: 0px;
+
+}
+#title{
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 130px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.button{
+  background: #A3D8C2;
+  border: inset #126E9D 3px;
+  border-radius: 1em;
+  color: #0F1F37;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  height: 70px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 17px;
+  width: 200px;
+}
+
+#boton{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#button{
+  background: #0F1F37;
+  border: solid #126E9D 3px;
+  border-radius: 1em;
+  color: #A3D8C2;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  height: 100px;
+  outline: none;
+  margin-top: 3%;
+  width: 300px;
+}
+.button:active{
+  background:  #174970;
+  color: #A3D8C2;
+}
+#button:active{
+  color:  #174970;
+  background: #3D9BA5;
+  border: inset #126E9D 3px;
+}
+#inicio{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+#registro{
+  outline: none;
+}
+#iniciar{
+  outline: none;
+}
