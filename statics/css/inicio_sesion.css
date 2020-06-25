@@ -1,0 +1,150 @@
+html,body{
+  height:100%;
+  margin:0px;
+  width: 100%;
+}
+
+body{
+  background:
+    linear-gradient(127deg, #A3DBC2, rgba(0,0,0,0) 70.71%),
+    linear-gradient(217deg, #3D9BA5, rgba(0,0,0,0) 70.71%),
+    linear-gradient(336deg, #126E9D, rgba(0,0,0,0) 70.71%);
+  background-size: 100% 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 333px;
+}
+label{
+  color: #0F1F37;
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 30%;
+}
+
+.input{
+  background: none;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 0%;
+  margin-right: 0%;
+  outline: none;
+  width: 190px;
+}
+.icon{
+  height: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+  width: 20px;;
+}
+.renglon{
+  align-items: center;
+  background: #A3D8C2;
+  border: inset #126E9D 3px;
+  border-radius: 1em;
+  color: #0F1F37;
+  display: flex;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  flex-direction: row;
+  font-weight: bold;
+  height: 30px;
+  justify-content: space-between;
+  margin-bottom: 7%;
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0%;
+  padding-right: 0%;
+  transition: box-shadow .7s;
+  width: 100%;
+}
+.respuesta{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 3%;
+  width: 110px;
+}
+
+#boton{
+  background: #0F1F37;
+  border: inset #126E9D 3px;
+  border-radius: 1em;
+  color: #A3D8C2;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+  outline: none;
+  position: relative;
+  top: 0px;
+  transition: box-shadow .7s, top .7s;
+  width: 70%;
+}
+#regresar{
+  background: #0F1F37;
+  border: inset #126E9D 3px;
+  border-radius: 1em;
+  color: #A3D8C2;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 1%;
+  margin-top: 1%;
+  outline: none;
+  padding: 7px;
+  position: relative;
+  top: 0px;
+  transition: box-shadow .7s, top .7s;
+  width: 100px;
+}
+#title{
+  color: #174970;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 70px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.renglon:hover{
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
+}
+.input:invalid{
+  color: gray;
+}
+.input:valid{
+  color: #0F1F37;
+}
+#boton:hover{
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
+  cursor: pointer;
+  top:-7px;
+}
+#regresar:hover{
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
+  cursor: pointer;
+  top:-7px;
+}
+#regresar:active{
+  background: #3D9BA5;
+  color:  #174970;
+}
+#boton:active{
+  background: #3D9BA5;
+  color:  #174970;
+}
+/*Valid, invalid, visited*/
