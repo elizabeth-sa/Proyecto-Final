@@ -9,7 +9,7 @@ function obtenerCookie(clave) { //Función para obener el valor de una cookie ex
   return "";
 }
 
-
+//Con estos DOM´s agregamos eventos a los botoones para redirigir a otras páginas
 let encuesta= document.getElementById("button");
 encuesta.addEventListener("click", ()=>{
   window.location = "./templates/encuesta.html";
@@ -22,9 +22,9 @@ let registro= document.getElementById("registro");
 registro.addEventListener("click", ()=>{
   window.location = "./templates/registro.html";
 });
-
+//Si hay una sesión redirige al perfil
 if (obtenerCookie("ElAullido")=="3141592653") {
-  window.location = "./templates/perfil.html";
+  window.location = "./dynamics/php/perfil.php";
 }
 //con esta función eliminamos las lasCookies
 /*function comercookies() {

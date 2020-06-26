@@ -4,7 +4,9 @@
     echo mysqli_connect_error();
     exit();
   }
+  //si el registro es de un alunmo realiza lo siguiente
   else*/ if (isset($_POST['registro']) && $_POST['registro'] == "alumno"){
+    //recibimos datos
     $cuenta = htmlentities((isset($_POST['cuenta']) && $_POST['cuenta'] != " ")? $_POST['cuenta'] : "Desconocido");
     $cuenta = strip_tags($cuenta);
     $fecha = htmlentities((isset($_POST['fecha']) && $_POST['fecha'] != " ")? $_POST['fecha'] : "Desconocido");
@@ -23,7 +25,9 @@
     $pass = strip_tags($pass);
     $nombre.=" ".$app." ".$apm;
   }
+  //si el registro es de un profesor realiza lo siguiente
   else if (isset($_POST['registro']) && $_POST['registro'] == "profesor") {
+    //recibimos datos
     $rfc = htmlentities((isset($_POST['rfc']) && $_POST['rfc'] != " ")? $_POST['rfc'] : "Desconocido");
     $rfc = strip_tags($rfc);
     $nombre = htmlentities((isset($_POST['nombre']) && $_POST['nombre'] != " ")? $_POST['nombre'] : "Desconocido");
@@ -40,6 +44,7 @@
     $pass = strip_tags($pass);
     $nombre.=" ".$app." ".$apm;
   }
+  //si no recibe datos de ningún form redirige al registro
   else {
     header("Location: ../../templates/registro.html");
   }

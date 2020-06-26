@@ -9,7 +9,12 @@ function obtenerCookie(clave) { //Función para obener el valor de una cookie ex
   return "";
 }
 
+//Con estos DOM´s agregamos eventos a los botoones para redirigir a otras páginas
 let boton= document.getElementById("regresar");
 boton.addEventListener("click", ()=>{
   window.location = "../dynamics/php/cerrar.php";
 });
+//Si no hay una sesión redirige al inicio
+if (obtenerCookie("ElAullido")!="3141592653") {
+  window.location = "../../index.html";
+}
