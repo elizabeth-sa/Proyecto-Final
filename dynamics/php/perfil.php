@@ -26,6 +26,21 @@
         <button type="button" class="botoncito" id="cerrar" name="button">Cerrar Sesión</button>
       </div>
     </nav>
+    <?php
+      //incluímos archivo de configuración
+      include_once './configuracion.php';
+
+      $conexion = mysqli_connect(local, usuario, contrasena, nombre);
+      if( !$conexion ){
+        echo mysqli_connect_error();
+        exit();
+      }
+      else {
+        session_name("ElAullido");
+        session_id("3141592653");
+        session_start();
+      }
+    ?>
     <div id="contenido">
       <aside id="foto">
         <img src="../../statics/media/profile.jpg" alt="perfil">
@@ -39,7 +54,16 @@
             </div>
           <label>Nombre:</label>
           </div>
-          <p class="input">Raúl de Jesús Damian Magaña</p>
+          <p class="input">
+            <?php
+              $usuario = (isset($_SESSION['usuario']))? $_SESSION['usuario'] : 'Desconocido';
+              $consulta = "SELECT Nombre FROM alumno WHERE NoCuenta = '".$usuario."'";
+              $respuesta= mysqli_query($conexion, $consulta);
+              $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+              $row[0]=descifrado($row[0]);
+              echo $row[0];
+            ?>
+          </p>
         </div>
         <!--Cada dato expuesto esta separado por un "renglón"-->
         <div class="renglon">
@@ -49,7 +73,13 @@
             </div>
           <label>Fecha de nacimiento:</label>
           </div>
-          <p class="input">13/05/2003</p>
+          <p class="input">
+            <?php
+              $nombre = (isset($_SESSION['nombre']))? $_SESSION['nombre'] : 'Desconocido';
+              $usuario = (isset($_SESSION['usuario']))? $_SESSION['usuario'] : 'Desconocido';
+              echo $nombre;
+            ?>
+          </p>
         </div>
         <!--Cada dato expuesto esta separado por un "renglón"-->
         <div class="renglon">
@@ -59,17 +89,29 @@
             </div>
           <label>Correo electrónico:</label>
           </div>
-          <p class="input">raul3e@gmail.com</p>
+          <p class="input">
+            <?php
+              echo "owo";
+            ?>
+          </p>
         </div>
         <!--La información de las encuestas esta en una sección-->
         <section>
           <div class="encuestas" id="elaboradas">
             <h3>Encuestas elaboradas</h3>
-            <h2>0</h2>
+            <h2>
+              <?php
+                echo "owo";
+              ?>
+            </h2>
           </div>
           <div class="encuestas" id="contestadas">
             <h3>Encuestas contestadas</h3>
-            <h2>0</h2>
+            <h2>
+              <?php
+                echo "owo";
+              ?>
+            </h2>
           </div>
         </section>
       </aside>
