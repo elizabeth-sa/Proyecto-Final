@@ -30,6 +30,11 @@
       //incluímos archivo de configuración
       include_once './configuracion.php';
 
+      function consulta_p($dato){
+
+
+      }
+
       $conexion = mysqli_connect(local, usuario, contrasena, nombre);
       if( !$conexion ){
         echo mysqli_connect_error();
@@ -39,6 +44,33 @@
         session_name("ElAullido");
         session_id("3141592653");
         session_start();
+        $usuario = (isset($_SESSION['usuario']))? $_SESSION['usuario'] : 'Desconocido';
+        $consulta = "SELECT NoCuenta FROM alumno";
+        $respuesta= mysqli_query($conexion, $consulta);
+        $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+        if ($row!=NULL) {
+          foreach ($row as $key => $value) {
+            $cuenta=descifrado($value);
+            if ($usuario==$cuenta) {
+              $tabla="alumno";
+            }
+          }
+          if (isset($tabla)==FALSE) {
+            $tabla="profesor";
+          }
+        }
+        else {
+          $tabla="profesor";
+        }
+
+        /*$consulta = "SELECT RFC FROM profesor";
+        $respuesta= mysqli_query($conexion, $consulta);
+        $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+        foreach ($row as $key => $value) {
+          $cuenta=descifrado($value);
+          echo $cuenta;
+          echo $tabla;
+        }*/
       }
     ?>
     <div id="contenido">
@@ -56,12 +88,33 @@
           </div>
           <p class="input">
             <?php
-              $usuario = (isset($_SESSION['usuario']))? $_SESSION['usuario'] : 'Desconocido';
-              $consulta = "SELECT Nombre FROM alumno WHERE NoCuenta = '".$usuario."'";
+            if ($tabla=="profesor") {
+              $consulta = "SELECT RFC, Nombre FROM profesor";
               $respuesta= mysqli_query($conexion, $consulta);
               $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
-              $row[0]=descifrado($row[0]);
-              echo $row[0];
+              foreach ($row as $key => $value) {
+                $cuenta=descifrado($value);
+                if ($usuario==$cuenta) {
+                  $nombre=$row[$key+1];
+
+                }
+              }
+              $nombre= descifrado($nombre);
+              echo $nombre;
+            }
+            else if ($tabla=="alumno") {
+              $consulta = "SELECT NoCuenta, Nombre FROM alumno";
+              $respuesta= mysqli_query($conexion, $consulta);
+              $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+              foreach ($row as $key => $value) {
+                $cuenta=descifrado($value);
+                if ($usuario==$cuenta) {
+                  $nombre=$row[$key+1];
+                }
+              }
+              $nombre= descifrado($nombre);
+              echo $nombre;
+            }
             ?>
           </p>
         </div>
@@ -75,9 +128,40 @@
           </div>
           <p class="input">
             <?php
-              $nombre = (isset($_SESSION['nombre']))? $_SESSION['nombre'] : 'Desconocido';
-              $usuario = (isset($_SESSION['usuario']))? $_SESSION['usuario'] : 'Desconocido';
-              echo $nombre;
+              if ($tabla=="profesor") {
+                $consulta = "SELECT RFC, FechaNac FROM profesor";
+                $respuesta= mysqli_query($conexion, $consulta);
+                $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+                $cuenta=0;
+                foreach ($row as $key => $value) {
+                  if (strlen($value)!=10) {
+                    $cuenta=descifrado($value);
+                    if ($usuario==$cuenta) {
+                      $llave=$key;
+                    }
+                  }
+                }
+                $fecha = $llave+1;
+                $nombre= ($row[$fecha]);
+                echo $nombre;
+              }
+              else if ($tabla=="alumno") {
+                $consulta = "SELECT NoCuenta, FechaNac FROM alumno";
+                $respuesta= mysqli_query($conexion, $consulta);
+                $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+                $cuenta=0;
+                foreach ($row as $key => $value) {
+                  if (strlen($value)!=10) {
+                    $cuenta=descifrado($value);
+                    if ($usuario==$cuenta) {
+                      $llave=$key;
+                    }
+                  }
+                }
+                $fecha = $llave+1;
+                $nombre= ($row[$fecha]);
+                echo $nombre;
+              }
             ?>
           </p>
         </div>
@@ -91,7 +175,32 @@
           </div>
           <p class="input">
             <?php
-              echo "owo";
+              if ($tabla=="profesor") {
+                $consulta = "SELECT RFC, Correo FROM profesor";
+                $respuesta= mysqli_query($conexion, $consulta);
+                $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+                foreach ($row as $key => $value) {
+                  $cuenta=descifrado($value);
+                  if ($usuario==$cuenta) {
+                    $nombre=$row[$key+1];
+                  }
+                }
+                $nombre= descifrado($nombre);
+                echo $nombre;
+              }
+              else if ($tabla=="alumno") {
+                $consulta = "SELECT NoCuenta, Correo FROM alumno";
+                $respuesta= mysqli_query($conexion, $consulta);
+                $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+                foreach ($row as $key => $value) {
+                  $cuenta=descifrado($value);
+                  if ($usuario==$cuenta) {
+                    $nombre=$row[$key+1];
+                  }
+                }
+                $nombre= descifrado($nombre);
+                echo $nombre;
+              }
             ?>
           </p>
         </div>
@@ -101,7 +210,40 @@
             <h3>Encuestas elaboradas</h3>
             <h2>
               <?php
-                echo "owo";
+                if ($tabla=="profesor") {
+                  $consulta = "SELECT RFC, Elaboradas FROM profesor";
+                  $respuesta= mysqli_query($conexion, $consulta);
+                  $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+                  $cuenta=0;
+                  foreach ($row as $key => $value) {
+                    if (strlen($value)!=10) {
+                      $cuenta=descifrado($value);
+                      if ($usuario==$cuenta) {
+                        $llave=$key;
+                      }
+                    }
+                  }
+                  $fecha = $llave+1;
+                  $nombre= ($row[$fecha]);
+                  echo $nombre;
+                }
+                else if ($tabla=="alumno") {
+                  $consulta = "SELECT NoCuenta, Elaboradas FROM alumno";
+                  $respuesta= mysqli_query($conexion, $consulta);
+                  $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+                  $cuenta=0;
+                  foreach ($row as $key => $value) {
+                    if (strlen($value)!=10) {
+                      $cuenta=descifrado($value);
+                      if ($usuario==$cuenta) {
+                        $llave=$key;
+                      }
+                    }
+                  }
+                  $fecha = $llave+1;
+                  $nombre= ($row[$fecha]);
+                  echo $nombre;
+                }
               ?>
             </h2>
           </div>
@@ -109,7 +251,41 @@
             <h3>Encuestas contestadas</h3>
             <h2>
               <?php
-                echo "owo";
+                if ($tabla=="profesor") {
+                  $consulta = "SELECT RFC, Contestadas FROM profesor";
+                  $respuesta= mysqli_query($conexion, $consulta);
+                  $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+                  $cuenta=0;
+                  foreach ($row as $key => $value) {
+                    if (strlen($value)!=10) {
+                      $cuenta=descifrado($value);
+                      if ($usuario==$cuenta) {
+                        $llave=$key;
+                      }
+                    }
+                  }
+                  $fecha = $llave+1;
+                  $nombre= ($row[$fecha]);
+                  echo $nombre;
+                }
+                else if ($tabla=="alumno") {
+                  $consulta = "SELECT NoCuenta, Contestadas FROM alumno";
+                  $respuesta= mysqli_query($conexion, $consulta);
+                  $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+                  $cuenta=0;
+                  foreach ($row as $key => $value) {
+                    if (strlen($value)!=10) {
+                      $cuenta=descifrado($value);
+                      if ($usuario==$cuenta) {
+                        $llave=$key;
+                      }
+                    }
+                  }
+                  $fecha = $llave+1;
+                  $nombre= ($row[$fecha]);
+                  echo $nombre;
+                }
+                mysqli_close($conexion);
               ?>
             </h2>
           </div>

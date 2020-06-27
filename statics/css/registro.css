@@ -131,7 +131,6 @@ i{
   width: 70%;
 }
 #fecha{
-  color: gray;
   width: 210px;
 }
 #form{
@@ -191,6 +190,12 @@ i{
   text-align: center;
 }
 
+.input:valid{
+  color: #0F1F37;
+}
+.input:invalid{
+  color: gray;
+}
 .opcion:hover{
   box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
   top: -7px;

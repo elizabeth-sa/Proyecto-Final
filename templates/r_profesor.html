@@ -16,8 +16,7 @@
       <button type="button" id="regresar" name="button">Regresar</button>
     </nav>
     <h1 id="registrate">Regístrate</h1>
-    <h3 class="ask_r">¡Hola, profesor!</h3>
-    <h3 class="ask_r"> Por favor ingrese sus datos correctamente.</h3>
+    <h3 class="ask_r">¡Hola! Por favor ingrese sus datos correctamente.</h3>
     <form id="form_f" action="../dynamics/php/registro.php" method="post">
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
@@ -27,7 +26,17 @@
           </div>
         <label>RFC:</label>
         </div>
-        <input type='text' class="input" name='rfc' placeholder='FIRI8505137A3' autocomplete="off" pattern = '^[A-Z]{4}[0-9][0-9]([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])[A-Z1-9]{3}$' required>
+        <input type='text' class="input" name='rfc' placeholder='FIRI8505137A3' autocomplete="off" pattern = '^[A-Z]{4}[0-9][0-9]([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])[A-Z1-9]{3}$' title="13 caracteres" required>
+      </div>
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+        <label>Fecha de nacimiento:</label>
+        </div>
+        <input type="date" class="input" id="fecha" name="fecha" autocomplete="off" title="dd/mm/aaaa" required value=""> <br>
       </div>
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
@@ -37,7 +46,7 @@
           </div>
         <label>Nombre:</label>
         </div>
-        <input type='text' class="input" name='nombre' placeholder='Isauro' autocomplete="off" pattern='^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$' required>
+        <input type='text' class="input" name='nombre' placeholder='Isauro' autocomplete="off" pattern='^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$' title="Solo letras" required>
       </div>
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
@@ -47,7 +56,7 @@
           </div>
         <label>Apellido paterno:</label>
         </div>
-        <input type='text' class="input" name='app' placeholder='Figueroa' autocomplete="off" pattern='^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$' required>
+        <input type='text' class="input" name='app' placeholder='Figueroa' autocomplete="off" pattern='^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$' title="Solo letras" required>
       </div>
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
@@ -57,7 +66,7 @@
           </div>
         <label>Apellido materno:</label>
         </div>
-        <input type='text' class="input" name='apm' placeholder='Rodríguez' autocomplete="off" pattern='^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$' required>
+        <input type='text' class="input" name='apm' placeholder='Rodríguez' autocomplete="off" pattern='^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$' title="Solo letras" required>
       </div>
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
@@ -67,7 +76,7 @@
           </div>
         <label>Número de trabajador:</label>
         </div>
-        <input type='text' class="input" name='num' placeholder='88888888' autocomplete="off" pattern='^[0-9]{6}' required>
+        <input type='text' class="input" name='num' placeholder='666666' autocomplete="off" pattern='^[0-9]{6}' title="6 dígitos" required>
       </div>
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
@@ -77,7 +86,7 @@
           </div>
         <label>E-mail:</label>
         </div>
-        <input type='text' class="input" name='correo' placeholder='profesor@gmail.com' autocomplete="off" pattern="^[!-Ý]+@[!-Ý]+\.[!-Ý]+$" required>
+        <input type='text' class="input" name='correo' placeholder='profesor@gmail.com' autocomplete="off" pattern="^[!-Ý]+@[!-Ý]+\.[!-Ý]+$" title="Por lo menos arroba y dominio" required>
       </div>
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
@@ -87,7 +96,7 @@
           </div>
         <label>Contraseña:</label>
         </div>
-        <input type='password' class="input" name='pass' placeholder='*******' autocomplete="off" minlength='7' maxlength='17' required>
+        <input type='password' class="input" name='pass' placeholder='*******' autocomplete="off" minlength='7' maxlength='17' title="Más de 7 caracteres owo" required>
       </div>
       <input type='hidden' name='registro' value='profesor'>
       <input id="boton" type='submit' value='Registrarme'>
