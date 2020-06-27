@@ -37,7 +37,7 @@
             }
             echo "</fieldset>";
             //Refiere a entidad "Profesor"
-            $consulta = "SELECT * FROM Profesor";
+            $consulta = "SELECT * FROM Profesor where RFC != 'IfIPs3qiWeyINSJPZ7VGAQooqEekC5iXniy3GBxdcxY='";
             $respuesta = mysqli_query($conexion, $consulta);
             echo "<fieldset><legend><h3>Profesores</h3></legend>";
             while($fila = mysqli_fetch_array($respuesta, MYSQLI_NUM)){

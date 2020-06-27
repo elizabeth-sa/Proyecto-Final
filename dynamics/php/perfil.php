@@ -47,15 +47,26 @@
         else {
           $tabla="profesor";
         }
-
-        /*$consulta = "SELECT RFC FROM profesor";
-        $respuesta= mysqli_query($conexion, $consulta);
-        $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
-        foreach ($row as $key => $value) {
-          $cuenta=descifrado($value);
-          echo $cuenta;
-          echo $tabla;
-        }*/
+        if ($tabla=="profesor") {
+          $consulta = "SELECT RFC FROM profesor";
+          $respuesta= mysqli_query($conexion, $consulta);
+          $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+          foreach ($row as $key => $value) {
+            if (descifrado($value)==$usuario) {
+              $cuentoso=$value;
+            }
+          }
+        }
+        else {
+          $consulta = "SELECT NoCuenta FROM alumno";
+          $respuesta= mysqli_query($conexion, $consulta);
+          $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+          foreach ($row as $key => $value) {
+            if (descifrado($value)==$usuario) {
+              $cuentoso=$value;
+            }
+          }
+        }
       }
     ?>
     <nav>
@@ -69,16 +80,16 @@
         <button type="button" class="botoncito" id="creditos" name="button">Créditos</button>
       </div>
       <div id="derecha">
-        <button type="button" class="botoncito" id="administrar" name="button">
+
           <?php
             $consulta = "SELECT Administrador FROM profesor WHERE RFC = '".$usuario."'";
             $respuesta= mysqli_query($conexion, $consulta);
             $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
-            if ($row[0]="Si") {
-              echo "Administrar";
+            if ($row!=NULL && $row[0]=="Si") {
+              echo '<button type="button" class="botoncito" id="administrar" name="button">Administrar</button>';
             }
           ?>
-        </button>
+
         <!--Botones para cerrar sesión-->
         <button type="button" class="botoncito" id="cerrar" name="button">Cerrar Sesión</button>
       </div>
@@ -99,7 +110,7 @@
           <p class="input">
             <?php
             if ($tabla=="profesor") {
-              $consulta = "SELECT RFC, Nombre FROM profesor";
+              $consulta = "SELECT RFC, Nombre FROM profesor WHERE RFC = '".$cuentoso."'";
               $respuesta= mysqli_query($conexion, $consulta);
               $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
               foreach ($row as $key => $value) {
@@ -112,7 +123,7 @@
               echo $nombre;
             }
             else if ($tabla=="alumno") {
-              $consulta = "SELECT NoCuenta, Nombre FROM alumno";
+              $consulta = "SELECT NoCuenta, Nombre FROM alumno WHERE NoCuenta = '".$cuentoso."'";
               $respuesta= mysqli_query($conexion, $consulta);
               $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
               foreach ($row as $key => $value) {
@@ -138,7 +149,7 @@
           <p class="input">
             <?php
               if ($tabla=="profesor") {
-                $consulta = "SELECT RFC, FechaNac FROM profesor";
+                $consulta = "SELECT RFC, FechaNac FROM profesor WHERE RFC = '".$cuentoso."'";
                 $respuesta= mysqli_query($conexion, $consulta);
                 $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
                 $cuenta=0;
@@ -155,7 +166,7 @@
                 echo $nombre;
               }
               else if ($tabla=="alumno") {
-                $consulta = "SELECT NoCuenta, FechaNac FROM alumno";
+                $consulta = "SELECT NoCuenta, FechaNac FROM alumno WHERE NoCuenta = '".$cuentoso."'";
                 $respuesta= mysqli_query($conexion, $consulta);
                 $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
                 $cuenta=0;
@@ -185,7 +196,7 @@
           <p class="input">
             <?php
               if ($tabla=="profesor") {
-                $consulta = "SELECT RFC, Correo FROM profesor";
+                $consulta = "SELECT RFC, Correo FROM profesor WHERE RFC = '".$cuentoso."'";
                 $respuesta= mysqli_query($conexion, $consulta);
                 $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
                 foreach ($row as $key => $value) {
@@ -198,7 +209,7 @@
                 echo $nombre;
               }
               else if ($tabla=="alumno") {
-                $consulta = "SELECT NoCuenta, Correo FROM alumno";
+                $consulta = "SELECT NoCuenta, Correo FROM alumno WHERE NoCuenta = '".$cuentoso."'";
                 $respuesta= mysqli_query($conexion, $consulta);
                 $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
                 foreach ($row as $key => $value) {
@@ -220,7 +231,7 @@
             <h2>
               <?php
                 if ($tabla=="profesor") {
-                  $consulta = "SELECT RFC, Elaboradas FROM profesor";
+                  $consulta = "SELECT RFC, Elaboradas FROM profesor WHERE RFC = '".$cuentoso."'";
                   $respuesta= mysqli_query($conexion, $consulta);
                   $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
                   $cuenta=0;
@@ -237,7 +248,7 @@
                   echo $nombre;
                 }
                 else if ($tabla=="alumno") {
-                  $consulta = "SELECT NoCuenta, Elaboradas FROM alumno";
+                  $consulta = "SELECT NoCuenta, Elaboradas FROM alumno WHERE NoCuenta = '".$cuentoso."'";
                   $respuesta= mysqli_query($conexion, $consulta);
                   $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
                   $cuenta=0;
@@ -261,7 +272,7 @@
             <h2>
               <?php
                 if ($tabla=="profesor") {
-                  $consulta = "SELECT RFC, Contestadas FROM profesor";
+                  $consulta = "SELECT RFC, Contestadas FROM profesor WHERE RFC = '".$cuentoso."'";
                   $respuesta= mysqli_query($conexion, $consulta);
                   $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
                   $cuenta=0;
@@ -278,7 +289,7 @@
                   echo $nombre;
                 }
                 else if ($tabla=="alumno") {
-                  $consulta = "SELECT NoCuenta, Contestadas FROM alumno";
+                  $consulta = "SELECT NoCuenta, Contestadas FROM alumno WHERE NoCuenta = '".$cuentoso."'";
                   $respuesta= mysqli_query($conexion, $consulta);
                   $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
                   $cuenta=0;
