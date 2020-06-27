@@ -92,7 +92,7 @@
     $nombre = strip_tags($nombre);
     $app = htmlentities((isset($_POST['app']) && $_POST['app'] != " ")? $_POST['app'] : "Desconocido");
     $app = strip_tags($app);
-    $apm = htmlentities((isset($_POST['apm']) && $_POST['apm'] != " ")? $_POST['apm'] : "Desconocido");
+    $apm = htmlentities((isset($_POST['apm']) && $_POST['apm'] != " ")? $_POST['apm'] : " ");
     $apm = strip_tags($apm);
     $num = htmlentities((isset($_POST['num']) && $_POST['num'] != " ")? $_POST['num'] : "Desconocido");
     $num = strip_tags($num);

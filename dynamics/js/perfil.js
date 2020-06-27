@@ -14,6 +14,10 @@ let cerrar= document.getElementById("cerrar");
 cerrar.addEventListener("click", ()=>{
   window.location = "./cerrar.php";
 });
+let administrar= document.getElementById("administrar");
+administrar.addEventListener("click", ()=>{
+  window.location = "./Admin.php";
+});
 //Si no hay una sesión redirige al inicio
 if (obtenerCookie("ElAullido")!="3141592653") {
   window.location = "../../index.html";

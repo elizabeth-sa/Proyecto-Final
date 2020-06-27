@@ -7,8 +7,15 @@
     <body>
         <fieldset><legend><h2>Perfiles de usuarios</h2></legend>
         <?php
-            //Inicia conexión con base de datos
-            $conexion = mysqli_connect("localhost", "elAullido", "314uILid0", "ElAullido");
+          //incluímos archivo de configuración
+          include_once './configuracion.php';
+
+          $conexion = mysqli_connect(local, usuario, contrasena, nombre);
+          if( !$conexion ){
+            echo mysqli_connect_error();
+            exit();
+          }
+          else {
             //Refiere a entidad "Alumno"
             $consulta = "SELECT * FROM Alumno";
             $respuesta = mysqli_query($conexion, $consulta);
@@ -49,6 +56,8 @@
                     echo "</form>";
             }
             echo "</fieldset>";
+          }
+          mysqli_close($conexion);
         ?>
         </fieldset>
     </body>

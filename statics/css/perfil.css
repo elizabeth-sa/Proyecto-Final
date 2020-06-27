@@ -140,6 +140,9 @@ section{
   width: 190px;
 }
 
+#administrar{
+  width: 130px;
+}
 #cerrar{
   width: 130px;
 }
@@ -168,9 +171,11 @@ section{
   width: 500px;
 }
 #derecha{
+  display: flex;
+  flex-direction: row;
   margin-right: 1%;
   margin-top: 10px;
-  width: 170px;
+  width: 300px;
 }
 #foto{
   background-color: #126E9D;

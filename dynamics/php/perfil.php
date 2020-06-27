@@ -11,21 +11,6 @@
     <link rel="stylesheet" href="../../statics/css/perfil.css">
   </head>
   <body>
-    <nav>
-      <!--Botones para redirigir a distintos lugares-->
-      <div id="izquierda">
-        <button type="button" class="botoncito" id="icono" name="button">Icono</button>
-        <button type="button" class="botoncito" id="perfil" name="button">Perfil</button>
-        <button type="button" class="botoncito" id="crear" name="button">Crear</button>
-        <button type="button" class="botoncito" id="contestar" name="button">Contestar</button>
-        <button type="button" class="botoncito" id="reportar" name="button">Reportar</button>
-        <button type="button" class="botoncito" id="creditos" name="button">Créditos</button>
-      </div>
-      <div id="derecha">
-        <!--Botones para cerrar sesión-->
-        <button type="button" class="botoncito" id="cerrar" name="button">Cerrar Sesión</button>
-      </div>
-    </nav>
     <?php
       //incluímos archivo de configuración
       include_once './configuracion.php';
@@ -73,6 +58,31 @@
         }*/
       }
     ?>
+    <nav>
+      <!--Botones para redirigir a distintos lugares-->
+      <div id="izquierda">
+        <button type="button" class="botoncito" id="icono" name="button">Icono</button>
+        <button type="button" class="botoncito" id="perfil" name="button">Perfil</button>
+        <button type="button" class="botoncito" id="crear" name="button">Crear</button>
+        <button type="button" class="botoncito" id="contestar" name="button">Contestar</button>
+        <button type="button" class="botoncito" id="reportar" name="button">Reportar</button>
+        <button type="button" class="botoncito" id="creditos" name="button">Créditos</button>
+      </div>
+      <div id="derecha">
+        <button type="button" class="botoncito" id="administrar" name="button">
+          <?php
+            $consulta = "SELECT Administrador FROM profesor WHERE RFC = '".$usuario."'";
+            $respuesta= mysqli_query($conexion, $consulta);
+            $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+            if ($row[0]="Si") {
+              echo "Administrar";
+            }
+          ?>
+        </button>
+        <!--Botones para cerrar sesión-->
+        <button type="button" class="botoncito" id="cerrar" name="button">Cerrar Sesión</button>
+      </div>
+    </nav>
     <div id="contenido">
       <aside id="foto">
         <img src="../../statics/media/profile.jpg" alt="perfil">
@@ -96,7 +106,6 @@
                 $cuenta=descifrado($value);
                 if ($usuario==$cuenta) {
                   $nombre=$row[$key+1];
-
                 }
               }
               $nombre= descifrado($nombre);

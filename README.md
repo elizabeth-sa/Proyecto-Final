@@ -1,1 +1,5 @@
 # Proyecto-Final
+
+RFC ADMIN : AEMI670708CJ5
+CONTRASEÑA ADMIN : 314u&Lid0
+COREEO ADMIN: admin@gmail.com

@@ -3,7 +3,7 @@
     $usuario = $_POST["usuario"];
     //Alumno o Prof
     $cliente = $_POST["cliente"];
-    //Actualizar o Bloquear 
+    //Actualizar o Bloquear
     $modif = $_POST["modif"];
     //Variables ambos
     $nombre = $_POST["nombre"];
@@ -28,8 +28,17 @@
             $consulta = "DELETE FROM Profesor WHERE RFC='$usuario'";
     }
     //Inicia conexión con base, ejecuta la consulta y cierra conexión
-    $conexion = mysqli_connect("localhost", "elAullido", "314uILid0", "ElAullido");
-    mysqli_query($conexion, $consulta);
+    //incluímos archivo de configuración
+    include_once './configuracion.php';
+
+    $conexion = mysqli_connect(local, usuario, contrasena, nombre);
+    if( !$conexion ){
+      echo mysqli_connect_error();
+      exit();
+    }
+    else {
+      mysqli_query($conexion, $consulta);
+    }
     mysqli_close($conexion);
     //Envía mensaje de acción realizada
     if($modif == "Bloquear")
