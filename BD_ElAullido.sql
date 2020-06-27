@@ -26,10 +26,8 @@ CREATE TABLE `alumno` (
   `NoCuenta` varchar(80) NOT NULL,
   `FechaNac` date NOT NULL,
   `CURP` varchar(80) NOT NULL,
-  `Nombre` varchar(20) NOT NULL,
-  `ApePat` varchar(12) NOT NULL,
-  `ApeMat` varchar(12) NOT NULL,
-  `Correo` varchar(30) NOT NULL,
+  `Nombre` varchar(80) DEFAULT NULL,
+  `Correo` varchar(80) DEFAULT NULL,
   `Contrasena` varchar(80) NOT NULL,
   `Foto` varchar(50) DEFAULT NULL,
   `Modo` enum('Claro','Obscuro') DEFAULT NULL,
@@ -119,11 +117,9 @@ DROP TABLE IF EXISTS `profesor`;
 CREATE TABLE `profesor` (
   `RFC` varchar(80) NOT NULL,
   `FechaNac` date NOT NULL,
-  `Nombre` varchar(20) NOT NULL,
-  `ApePat` varchar(12) NOT NULL,
-  `ApeMat` varchar(12) NOT NULL,
+  `Nombre` varchar(80) DEFAULT NULL,
   `NoTrabajador` varchar(80) NOT NULL,
-  `Correo` varchar(30) NOT NULL,
+  `Correo` varchar(80) DEFAULT NULL,
   `Contrasena` varchar(80) NOT NULL,
   `Foto` varchar(50) DEFAULT NULL,
   `Modo` enum('Claro','Obscuro') DEFAULT NULL,
@@ -177,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-25 20:16:23
+-- Dump completed on 2020-06-26 20:53:19
