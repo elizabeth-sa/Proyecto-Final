@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>El Aullido</title>
+    <!--Librería de font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <!--Enlace de google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <!--Hoja de diseño-->
+    <link rel="stylesheet" href="../statics/css/registro.css">
+  </head>
+  <body>
+    <nav>
+      <!--Botón para regresar al index-->
+      <button type="button" id="regresar" name="button">Regresar</button>
+    </nav>
+    <h1 id="title">Regístrate</h1>
+    <h3 class="ask">¿Qué tipo de usuario eres?</h3>
+    <!--Agregué eventos a divs para que funcionaran a modo de botones-->
+    <div id="form">
+      <!--Añadí evento a un div para que rediriga al registro de profesor con un click-->
+      <div class="opcion" id="profesor">
+        <i class="fas fa-chalkboard-teacher fa-7x"></i>
+        <h3 class="desc">Profesor</h3>
+      </div>
+      <!--Añadí evento a un div para que rediriga al registro de alumno con un click-->
+      <div class="opcion" id="alumno">
+        <i class="fas fa-book-reader fa-7x"></i>
+        <h3 class="desc">Alumno</h3>
+      </div>
+    </div>
+    <script src="../dynamics/js/registro.js"></script>
+  </body>
+</html>
