@@ -76,7 +76,6 @@
         <button type="button" class="botoncito" id="crear" name="button">Crear</button>
         <button type="button" class="botoncito" id="contestar" name="button">Contestar</button>
         <button type="button" class="botoncito" id="reportar" name="button">Reportar</button>
-        <button type="button" class="botoncito" id="creditos" name="button">Créditos</button>
       </div>
       <div id="derecha">
           <?php

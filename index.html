@@ -5,24 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>El Aullido</title>
     <link rel="icon" href="./statics/media/logo_lobo.png">
-    <!--Librería de bootstrap-->
-    <link rel="stylesheet" href="./lib/boot/css/bootstrap.min.css">
+    <!--Librería de bootstrap
+    <link rel="stylesheet" href="./lib/boot/css/bootstrap.min.css">-->
     <!--Enlace de google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Raleway:wght@100&display=swap" rel="stylesheet">
     <!--Hoja de diseño-->
     <link href="./statics/css/style.css" rel="stylesheet" type="text/css"/>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div id="title">EL AULLIDO</div><!--Se llama así porque cuando los coyotes opinan, aullan uwu-->
     <!--Opciones y logo-->
     <div id="inicio">
       <button class="button" id="registro" type="button" name="button">Regístrate</button>
-      <img src="./statics/media/logo_lobo.png" alt="">
+      <img class="imagen" src="./statics/media/logo_lobo.png" alt="">
       <button class="button" id="iniciar" type="button" name="button">Inicia Sesión</button>
       <div id="boton">
         <button id="button" type="button" name="button">¡Responde una encuesta!</button>
       </div>
     </div>
+    <div id="creds" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Magnificent</h2>
+          </div>
+          <div class="modal-body">
+            <h3>Raúl de Jesús Damián Magaña</h3> Hijo adoptivo de Stephen Hawkings, comenzó a trabajar en la NASA con tan solo 14 años de edad y responsable de evitar la caída de una tercer Torre Gemela. Programador de las pantallas de inicio, hasta el perfil y diseño de todas.
+            <h3>Elizabeth Salgado Abreu</h3> Apodada Ama y Señora de las Bases de Datos, Lady Maria DB llevó a cabo el desarrollo de la base de datos y las funciones de los usuarios administradores.
+            <h3>Juan de Dios de Luna Santillán</h3> Descendiente de los fundadores de la UNAM, ganó el premio nobel de programación en su primera edición. Programó las funciones de las encuestas y sus preguntas.
+            <h3>David Alexander Ramos Maldonado</h3> Ganador de 5 medallas olímpicas en programación. Fiel colaborador de Juan en la realización de las encuestas, sin embargo no por ser Cosa 2 es menos importante que Cosa 1. Diseñador de la función Kahoot. 
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="botoncito" id="creditos" data-toggle="modal" data-target="#creds" name="button">Créditos</button>
     <!--Java Script para eventos en los botones-->
     <script src="./dynamics/js/script.js"></script>
   </body>
