@@ -20,7 +20,7 @@ administrar.addEventListener("click", ()=>{
 });
 let encuesta= document.getElementById("encuesta");
 encuesta.addEventListener("click", ()=>{
-  window.location = "./Encuesta.php";
+  window.location = "./encuesta.php";
 });
 let crear= document.getElementById("crear");
 crear.addEventListener("click", ()=>{

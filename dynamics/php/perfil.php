@@ -70,8 +70,8 @@
     ?>
     <nav>
       <!--Botones para redirigir a distintos lugares-->
+      <img id="Logo" src="../../statics/media/logo_lobo.png" alt="OwO">
       <div id="izquierda">
-        <button type="button" class="botoncito" id="icono" name="button">Icono</button>
         <button type="button" class="botoncito" id="perfil" name="button">Perfil</button>
         <button type="button" class="botoncito" id="crear" name="button">Crear</button>
         <button type="button" class="botoncito" id="contestar" name="button">Contestar</button>
@@ -79,17 +79,15 @@
         <button type="button" class="botoncito" id="creditos" name="button">Créditos</button>
       </div>
       <div id="derecha">
-
           <?php
             $consulta = "SELECT Administrador FROM profesor WHERE RFC = '".$cuentoso."'";
             $respuesta= mysqli_query($conexion, $consulta);
             $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
             if ($row!=NULL && $row[0]=="Si") {
-              echo '<button type="button" class="botoncito" id="encuesta" name="button">Perfiles</button>';
-              echo '<button type="button" class="botoncito" id="administrar" name="button">Encuestas</button>';
+              echo '<button type="button" class="botoncito" id="administrar" name="button">Perfiles</button>';
+              echo '<button type="button" class="botoncito" id="encuesta" name="button">Encuestas</button>';
             }
           ?>
-
         <!--Botones para cerrar sesión-->
         <button type="button" class="botoncito" id="cerrar" name="button">Cerrar Sesión</button>
       </div>
