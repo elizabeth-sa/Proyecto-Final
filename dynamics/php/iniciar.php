@@ -91,7 +91,7 @@
       }
     }
     else {
-      echo "no regisgtros";
+      echo "no registros";
     }
   }
   mysqli_close($conexion);

@@ -55,32 +55,30 @@
       }
       //si todo esta en orden, puede insertar datos
       else {
-        $consulta = "INSERT INTO alumno (NoCuenta, FechaNac, CURP, Nombre, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Bloqueo)
-        VALUES ('".$cuenta."', '".$fecha."', '".$curp."', '".$nombre."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
-        $consulta2= mysqli_real_escape_string($conexion, $consulta);
-        mysqli_query($conexion, $consulta2);
+        $consulta = "INSERT INTO alumno (NoCuenta, FechaNac, CURP, Nombre, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Bloqueo) VALUES ('".$cuenta."', '".$fecha."', '".$curp."', '".$nombre."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
+        //$consulta2= mysqli_real_escape_string($conexion, $consulta);
+        mysqli_query($conexion, $consulta);
         //Iniciamos sesión y almacenamos sus datos
         session_name("ElAullido");
         session_id("3141592653");
         session_start();
         $_SESSION['usuario'] = $cuen;
         $_SESSION['tipo'] = "alumno";
-        header("Location: ./perfil.php");
+        //header("Location: ./perfil.php");
       }
     }
     //si es el primer registro inserta datos
     else{
-      $consulta = "INSERT INTO alumno (NoCuenta, FechaNac, CURP, Nombre, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Bloqueo)
-      VALUES ('".$cuenta."', '".$fecha."', '".$curp."', '".$nombre."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
-      $consulta2= mysqli_real_escape_string($conexion, $consulta);
-      mysqli_query($conexion, $consulta2);
+      $consulta = "INSERT INTO alumno (NoCuenta, FechaNac, CURP, Nombre, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Bloqueo) VALUES ('".$cuenta."', '".$fecha."', '".$curp."', '".$nombre."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
+      //$consulta2= mysqli_real_escape_string($conexion, $consulta);
+      mysqli_query($conexion, $consulta);
       //Iniciamos sesión y almacenamos sus datos
       session_name("ElAullido");
       session_id("3141592653");
       session_start();
       $_SESSION['usuario'] = $cuen;
       $_SESSION['tipo'] = "alumno";
-      header("Location: ./perfil.php");
+      //header("Location: ./perfil.php");
     }
   }
   //si el registro es de un profesor realiza lo siguiente
@@ -131,10 +129,9 @@
       }
       //si todo esta en orden, puede insertar datos
       else {
-        $consulta = "INSERT INTO profesor (RFC, FechaNac, Nombre, NoTrabajador, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Administrador)
-        VALUES ('".$rfc."', '".$fecha."', '".$nombre."', '".$num."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
-        $consulta2= mysqli_real_escape_string($conexion, $consulta);
-        mysqli_query($conexion, $consulta2);
+        $consulta = "INSERT INTO profesor (RFC, FechaNac, Nombre, NoTrabajador, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Administrador) VALUES ('".$rfc."', '".$fecha."', '".$nombre."', '".$num."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
+        //$consulta2= mysqli_real_escape_string($conexion, $consulta);
+        mysqli_query($conexion, $consulta);
         //Iniciamos sesión y almacenamos sus datos
         session_name("ElAullido");
         session_id("3141592653");
@@ -142,14 +139,15 @@
         $_SESSION['usuario'] = $rfc_;
         $_SESSION['tipo'] = "profesor";
         header("Location: ./perfil.php");
+        echo $rfc_;
+        echo $consulta;
       }
     }
     //si es el primer registro inserta datos
     else{
-      $consulta = "INSERT INTO profesor (RFC, FechaNac, Nombre, NoTrabajador, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Administrador)
-      VALUES ('".$rfc."', '".$fecha."', '".$nombre."', '".$num."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
-      $consulta2= mysqli_real_escape_string($conexion, $consulta);
-      mysqli_query($conexion, $consulta2);
+      $consulta = "INSERT INTO profesor (RFC, FechaNac, Nombre, NoTrabajador, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Administrador) VALUES ('".$rfc."', '".$fecha."', '".$nombre."', '".$num."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
+      //$consulta2= mysqli_real_escape_string($conexion, $consulta);
+      mysqli_query($conexion, $consulta);
       //Iniciamos sesión y almacenamos sus datos
       session_name("ElAullido");
       session_id("3141592653");
