@@ -41,8 +41,6 @@
       echo "<input name=titulo1 type=hidden value='".$titulo."'>";
       $m=1;
       for($i=1;$i<=$preguntas;$i++){
-        echo "<input name=PR".$i." type=hidden value='".${"pregunta".$i}."' />";
-        echo "<input name=TIPO".$i." type=hidden value='".${"tipo".$i}."' />";
         echo "<span> ${'pregunta'.$i} <br>";
         switch(${"tipo".$i}){
           case "Texto":
@@ -64,6 +62,10 @@
       echo "<input type=submit value=Continuar>";
       echo "<input name='titulo' type='hidden' value='".$titulo."'>";
       echo "<input type='hidden' name='preguntas' value='".$preguntas."'>";
+      for($i=1;$i<=$preguntas;$i++){?>
+        <input name='p<?php echo $i; ?>' type='hidden' value='<?php echo ${"pregunta".$i}; ?>'>
+        <input name='tipo<?php echo $i; ?>' type='hidden' value='<?php echo ${"tipo".$i}; ?>'>
+      <?php }
       echo "</form>";
      ?>
   </body>

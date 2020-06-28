@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Encuesta</title>
+    <title>Crear Encuesta</title>
   </head>
   <body>
     <form name="form1" method="post" action="enc2.php">
