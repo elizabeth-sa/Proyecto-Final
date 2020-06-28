@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>El Aullido</title>
+    <link rel="icon" href="../../statics/media/logo_lobo.png">
     <!--Librería de font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <!--Enlace de google fonts-->

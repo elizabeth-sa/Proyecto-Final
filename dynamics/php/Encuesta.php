@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Administrador</title>
+        <link rel="icon" href="../../statics/media/logo_lobo.png">
     </head>
     <body>
         <fieldset><legend><h2>Encuestas</h2></legend>

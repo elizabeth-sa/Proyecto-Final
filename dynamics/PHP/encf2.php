@@ -3,6 +3,7 @@
   	<head>
     	<meta charset="utf-8">
 		<title><?php $titulo=$_POST['titulo1']; echo $titulo; ?></title>
+    <link rel="icon" href="../../statics/media/logo_lobo.png">
 	</head>
 	<body>
 		<?php

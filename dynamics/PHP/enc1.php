@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Crear Encuesta</title>
+    <link rel="icon" href="../../statics/media/logo_lobo.png">
   </head>
   <body>
     <form name="form1" method="post" action="enc2.php">
