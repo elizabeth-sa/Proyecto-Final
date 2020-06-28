@@ -114,6 +114,8 @@
     $consulta = "SELECT RFC FROM profesor";
     $respuesta= mysqli_query($conexion, $consulta);
     $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+    echo "owo";
+    var_dump ($row);
     $existe=0;
     if ($row!=NULL) {
       $rfc_desc=descifrado($rfc);
@@ -138,9 +140,13 @@
         session_start();
         $_SESSION['usuario'] = $rfc_;
         $_SESSION['tipo'] = "profesor";
+<<<<<<< HEAD
         header("Location: ./perfil.php");
         echo $rfc_;
         echo $consulta;
+=======
+        //header("Location: ./perfil.php");
+>>>>>>> ca48211291d526a70ab29f804ecca6ef4af440b4
       }
     }
     //si es el primer registro inserta datos
@@ -154,7 +160,7 @@
       session_start();
       $_SESSION['usuario'] = $rfc_;
       $_SESSION['tipo'] = "profesor";
-      header("Location: ./perfil.php");
+      //header("Location: ./perfil.php");
     }
 
   }

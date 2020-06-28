@@ -82,11 +82,12 @@
       <div id="derecha">
 
           <?php
-            $consulta = "SELECT Administrador FROM profesor WHERE RFC = '".$usuario."'";
+            $consulta = "SELECT Administrador FROM profesor WHERE RFC = '".$cuentoso."'";
             $respuesta= mysqli_query($conexion, $consulta);
             $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
             if ($row!=NULL && $row[0]=="Si") {
-              echo '<button type="button" class="botoncito" id="administrar" name="button">Administrar</button>';
+              echo '<button type="button" class="botoncito" id="encuesta" name="button">Perfiles</button>';
+              echo '<button type="button" class="botoncito" id="administrar" name="button">Encuestas</button>';
             }
           ?>
 
