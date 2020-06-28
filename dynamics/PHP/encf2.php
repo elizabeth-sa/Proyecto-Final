@@ -4,8 +4,18 @@
     	<meta charset="utf-8">
 		<title><?php $titulo=$_POST['titulo1']; echo $titulo; ?></title>
     <link rel="icon" href="../../statics/media/logo_lobo.png">
+    <!--Librería de font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <!--Enlace de google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <!--Hoja de diseño-->
+    <link rel="stylesheet" href="../../statics/css/encuestas.css">
 	</head>
 	<body>
+    <nav>
+      <!--Botón para regresar al index-->
+      <button type="button" id="regresar" name="button">Regresar</button>
+    </nav>
 		<?php
 		$titulo=$_POST['titulo'];
 		$preguntas=$_POST['preguntas'];
@@ -42,7 +52,7 @@
 		echo "<input name=J type=hidden value=".$j." />";
 		echo "<input type=submit>";
 		echo "</form>";
-
 		?>
+    <script src="../js/enc.js"></script>
 	</body>
 </html>

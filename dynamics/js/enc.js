@@ -10,22 +10,11 @@ function obtenerCookie(clave) { //Función para obener el valor de una cookie ex
 }
 
 //Con estos DOM´s agregamos eventos a los botoones para redirigir a otras páginas
-let cerrar= document.getElementById("cerrar");
-cerrar.addEventListener("click", ()=>{
-  window.location = "./cerrar.php";
-});
-let administrar= document.getElementById("administrar");
-administrar.addEventListener("click", ()=>{
-  window.location = "./Admin.php";
-});
-let encuesta= document.getElementById("encuesta");
-encuesta.addEventListener("click", ()=>{
-  window.location = "./Encuesta.php";
-});
-let crear= document.getElementById("crear");
-crear.addEventListener("click", ()=>{
+let boton= document.getElementById("regresar");
+boton.addEventListener("click", ()=>{
   window.location = "../../templates/encuesta.html";
 });
+
 //Si no hay una sesión redirige al inicio
 if (obtenerCookie("ElAullido")!="3141592653") {
   window.location = "../../index.html";

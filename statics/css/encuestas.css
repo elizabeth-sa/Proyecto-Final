@@ -15,3 +15,167 @@ body{
   flex-direction: column;
   margin: 0px;
 }
+
+.ask_r{
+  color: #174970;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  text-align: center;
+}
+.input{
+  background: none;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 0%;
+  margin-right: 0%;
+  outline: none;
+  width: 230px;
+}
+.renglon{
+  align-items: center;
+  background: #A3D8C2;
+  border: inset #126E9D 3px;
+  border-radius: 1em;
+  color: #0F1F37;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  height: 30px;
+  justify-content: space-between;
+  margin-bottom: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1%;
+  padding-left: 0%;
+  padding-right: 0%;
+  transition: box-shadow .7s;
+  width: 100%;
+}
+.respuesta_r{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 3%;
+  width: 230px;
+}
+.icon{
+  height: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+  width: 20px;;
+}
+
+#boton{
+  background: #0F1F37;
+  border: inset #126E9D 3px;
+  border-radius: 1em;
+  color: #A3D8C2;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  outline: none;
+  position: relative;
+  top: 0px;
+  transition: box-shadow .7s, top .7s;
+  width: 70%;
+}
+#enviar{
+  background: #0F1F37;
+  border: inset #126E9D 3px;
+  border-radius: 1em;
+  color: #A3D8C2;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7px;
+  outline: none;
+  padding: 7px;
+  position: relative;
+  top: 0px;
+  transition: box-shadow .7s, top .7s;
+  width: 100px;
+}
+#form_f{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7px;
+  width: 500px;
+}
+#regresar{
+  background: #0F1F37;
+  border: inset #126E9D 3px;
+  border-radius: 1em;
+  color: #A3D8C2;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 1%;
+  margin-top: 1%;
+  outline: none;
+  padding: 7px;
+  position: relative;
+  top: 0px;
+  transition: box-shadow .7s, top .7s;
+  width: 100px;
+}
+#title{
+  color: #174970;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 70px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.input:valid{
+  color: #0F1F37;
+}
+.input:invalid{
+  color: gray;
+}
+.renglon:hover{
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
+}
+#boton:hover{
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
+  cursor: pointer;
+  top:-7px;
+}
+#boton:active{
+  background: #3D9BA5;
+  color:  #174970;
+}
+#enviar:hover{
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
+  cursor: pointer;
+  top:-7px;
+}
+#enviar:active{
+  background: #3D9BA5;
+  color:  #174970;
+}
+#regresar:hover{
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
+  cursor: pointer;
+  top:-7px;
+}
+#regresar:active{
+  background: #3D9BA5;
+  color:  #174970;
+}

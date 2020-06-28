@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>El Aullido</title>
+    <title>Crear Encuesta</title>
     <link rel="icon" href="../statics/media/logo_lobo.png">
     <!--Librería de font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
@@ -16,6 +16,30 @@
       <!--Botón para regresar al index-->
       <button type="button" id="regresar" name="button">Regresar</button>
     </nav>
+    <h1 id="title">Crear Encuesta</h1>
+    <form id="form_f" name="form1" method="post" action="../dynamics/php/enc2.php">
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fas fa-question-circle" id="symbol"></i>
+          </div>
+        <label>Titulo de la encuesta:</label>
+        </div>
+        <input type="text" class="input" placeholder="Título" autocomplete="off" name="titulo" required>
+      </div>
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fas fa-question-circle" id="symbol"></i>
+          </div>
+        <label>N&uacute;mero de preguntas:</label>
+        </div>
+        <input type="number" class="input" placeholder="#" autocomplete="off" name="preguntas" required>
+      </div>
+        <input type="submit" name="Submit" id="enviar" value="Enviar">
+    </form>
     <script src="../dynamics/js/encuesta.js"></script>
   </body>
 </html>
