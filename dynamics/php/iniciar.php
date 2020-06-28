@@ -16,6 +16,7 @@
     $consulta = "SELECT RFC, Correo FROM profesor";
     $respuesta= mysqli_query($conexion, $consulta);
     $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+    var_dump($row);
     //si hay registros, prosigue
     if ($row!=NULL) {
       foreach ($row as $key => $value) {
@@ -42,7 +43,7 @@
             $_SESSION['usuario'] = $user;
             $_SESSION['tipo'] = "profesor";
             echo $user;
-            header("Location: ./perfil.php");
+            //header("Location: ./perfil.php");
           }
           else {
             echo "no contraseña";
@@ -78,7 +79,7 @@
             session_start();
             $_SESSION['usuario'] = $user;
             $_SESSION['tipo'] = "alumno";
-            header("Location: ./perfil.php");
+            //header("Location: ./perfil.php");
           }
           else {
             echo "no contraseña";

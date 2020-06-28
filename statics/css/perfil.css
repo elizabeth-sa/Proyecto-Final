@@ -176,7 +176,10 @@ section{
   justify-content: flex-end;
   margin-right: 1%;
   margin-top: 10px;
-  width: 300px;
+  width: 400px;
+}
+#encuesta{
+  width: 130px;
 }
 #foto{
   background-color: #126E9D;

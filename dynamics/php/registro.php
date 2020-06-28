@@ -116,6 +116,8 @@
     $consulta = "SELECT RFC FROM profesor";
     $respuesta= mysqli_query($conexion, $consulta);
     $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
+    echo "owo";
+    var_dump ($row);
     $existe=0;
     if ($row!=NULL) {
       $rfc_desc=descifrado($rfc);
@@ -131,17 +133,16 @@
       }
       //si todo esta en orden, puede insertar datos
       else {
-        $consulta = "INSERT INTO profesor (RFC, FechaNac, Nombre, NoTrabajador, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Administrador)
-        VALUES ('".$rfc."', '".$fecha."', '".$nombre."', '".$num."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
-        $consulta2= mysqli_real_escape_string($conexion, $consulta);
-        mysqli_query($conexion, $consulta2);
+        $consulta = "INSERT INTO profesor (RFC, FechaNac, Nombre, NoTrabajador, Correo, Contrasena, Foto, Modo, Elaboradas, Contestadas, Administrador) VALUES ('".$rfc."', '".$fecha."', '".$nombre."', '".$num."', '".$correo."', '".$pass."', 'profile.jpg', 'Claro', '0', '0', 'No')";
+        //$consulta2= mysqli_real_escape_string($conexion, $consulta);
+        mysqli_query($conexion, $consulta);
         //Iniciamos sesión y almacenamos sus datos
         session_name("ElAullido");
         session_id("3141592653");
         session_start();
         $_SESSION['usuario'] = $rfc_;
         $_SESSION['tipo'] = "profesor";
-        header("Location: ./perfil.php");
+        //header("Location: ./perfil.php");
       }
     }
     //si es el primer registro inserta datos
@@ -156,7 +157,7 @@
       session_start();
       $_SESSION['usuario'] = $rfc_;
       $_SESSION['tipo'] = "profesor";
-      header("Location: ./perfil.php");
+      //header("Location: ./perfil.php");
     }
 
   }
