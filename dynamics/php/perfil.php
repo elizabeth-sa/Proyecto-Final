@@ -35,9 +35,8 @@
         $respuesta= mysqli_query($conexion, $consulta);
         $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
         if ($row!=NULL) {
-          foreach ($row as $key => $value) {
-            $cuenta=descifrado($value);
-            if ($usuario==$cuenta) {
+          while ($value = mysqli_fetch_array($respuesta) ) {
+            if (descifrado($value[0])==$usuario) {
               $tabla="alumno";
             }
           }
