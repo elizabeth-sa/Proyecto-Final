@@ -11,12 +11,13 @@
       echo $titulo;
       for($i=1;$i<=$preguntas;$i++){
         ${"pregunta".$i} = $_POST['p'.$i];
+        ${"tipo".$i} = $_POST['tipo'.$i];
+      }
       /*$pregunta2 = $_POST['p2'];
       $pregunta3 = $_POST['p3'];
       $pregunta4 = $_POST['p4'];
       $pregunta5 = $_POST['p5'];
       $pregunta6 = $_POST['p6'];*/
-        ${"tipo".$i} = $_POST['tipo'.$i];
       /*$tipo2 = $_POST['tipo2'];
       $tipo3 = $_POST['tipo3'];
       $tipo4 = $_POST['tipo4'];
@@ -36,7 +37,6 @@
       echo $pregunta6.$tipo6;
       echo $titulo;
       for($i=1;$i<=$preguntas;$i++){*/
-      }
       echo "<form action=encf2.php method=post>";
       echo "<input name=titulo1 type=hidden value='".$titulo."'>";
       $m=1;
@@ -60,6 +60,12 @@
       }
       echo "<input name=m type=hidden value='".$m."'>";
       echo "<input type=submit value=Continuar>";
+      echo "<input name='titulo' type='hidden' value='".$titulo."'>";
+      echo "<input type='hidden' name='preguntas' value='".$preguntas."'>";
+      for($i=1;$i<=$preguntas;$i++){?>
+        <input name='p<?php echo $i; ?>' type='hidden' value='<?php echo ${"pregunta".$i}; ?>'>
+        <input name='tipo<?php echo $i; ?>' type='hidden' value='<?php echo ${"tipo".$i}; ?>'>
+      <?php }
       echo "</form>";
      ?>
   </body>
