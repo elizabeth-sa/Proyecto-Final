@@ -50,7 +50,6 @@
         if ($tabla=="profesor") {
           $consulta = "SELECT RFC FROM profesor";
           $respuesta= mysqli_query($conexion, $consulta);
-          //$row = mysqli_fetch_assoc($respuesta);    
           while ($value = mysqli_fetch_array($respuesta) ) {
             if (descifrado($value[0])==$usuario) {
               $cuentoso=$value[0];
@@ -60,10 +59,9 @@
         else {
           $consulta = "SELECT NoCuenta FROM alumno";
           $respuesta= mysqli_query($conexion, $consulta);
-          $row = mysqli_fetch_array($respuesta, MYSQLI_NUM);
-          foreach ($row as $key => $value) {
-            if (descifrado($value)==$usuario) {
-              $cuentoso=$value;
+          while ($value = mysqli_fetch_array($respuesta) ) {
+            if (descifrado($value[0])==$usuario) {
+              $cuentoso=$value[0];
             }
           }
         }
