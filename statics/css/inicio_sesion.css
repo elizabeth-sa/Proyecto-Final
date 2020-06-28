@@ -1,6 +1,6 @@
 html,body{
-  margin:0px;
   height:100%;
+  margin:0px;
   width: 100%;
 }
 
@@ -15,31 +15,21 @@ body{
   flex-direction: column;
   margin: 0px;
 }
-h5{
-  color: #174970;
-  font-family: 'Gloria Hallelujah', cursive;
-  font-size: 30px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 333px;
 }
-p{
-  color: #174970;
-  font-family: 'Gloria Hallelujah', cursive;
-  font-size: 17px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
+label{
+  color: #0F1F37;
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 30%;
 }
-.ask_r{
-  color: #174970;
-  font-family: 'Raleway', sans-serif;
-  font-size: 17px;
-  font-weight: bold;
-  margin-bottom: 0%;
-  margin-top: 0%;
-  text-align: center;
-}
+
 .input{
   background: none;
   border: none;
@@ -49,7 +39,13 @@ p{
   margin-left: 0%;
   margin-right: 0%;
   outline: none;
-  width: 230px;
+  width: 190px;
+}
+.icon{
+  height: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+  width: 20px;;
 }
 .renglon{
   align-items: center;
@@ -58,32 +54,26 @@ p{
   border-radius: 1em;
   color: #0F1F37;
   display: flex;
-  flex-direction: row;
   font-family: 'Raleway', sans-serif;
   font-size: 17px;
+  flex-direction: row;
   font-weight: bold;
   height: 30px;
   justify-content: space-between;
-  margin-bottom: 1%;
+  margin-bottom: 7%;
+  margin-top: 7%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1%;
   padding-left: 0%;
   padding-right: 0%;
   transition: box-shadow .7s;
   width: 100%;
 }
-.respuesta_r{
+.respuesta{
   display: flex;
   justify-content: flex-start;
   margin-left: 3%;
-  width: 230px;
-}
-.icon{
-  height: 100%;
-  margin-left: 0%;
-  margin-right: 3%;
-  width: 20px;;
+  width: 110px;
 }
 
 #boton{
@@ -94,52 +84,15 @@ p{
   font-family: 'Raleway', sans-serif;
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 1%;
+  margin-bottom: 7%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3%;
+  margin-top: 7%;
   outline: none;
   position: relative;
   top: 0px;
   transition: box-shadow .7s, top .7s;
   width: 70%;
-}
-#enviar{
-  background: #0F1F37;
-  border: inset #126E9D 3px;
-  border-radius: 1em;
-  color: #A3D8C2;
-  font-family: 'Raleway', sans-serif;
-  font-size: 17px;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 7px;
-  outline: none;
-  padding: 7px;
-  position: relative;
-  top: 0px;
-  transition: box-shadow .7s, top .7s;
-  width: 100px;
-}
-#form_f{
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 7px;
-  width: 500px;
-}
-#form_f2{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 7px;
-  width: 500px;
 }
 #regresar{
   background: #0F1F37;
@@ -167,32 +120,19 @@ p{
   text-align: center;
 }
 
-.input:valid{
-  color: #0F1F37;
+.renglon:hover{
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
 }
 .input:invalid{
   color: gray;
 }
-.renglon:hover{
-  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
+.input:valid{
+  color: #0F1F37;
 }
 #boton:hover{
   box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
   cursor: pointer;
   top:-7px;
-}
-#boton:active{
-  background: #3D9BA5;
-  color:  #174970;
-}
-#enviar:hover{
-  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
-  cursor: pointer;
-  top:-7px;
-}
-#enviar:active{
-  background: #3D9BA5;
-  color:  #174970;
 }
 #regresar:hover{
   box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.7);
@@ -203,3 +143,8 @@ p{
   background: #3D9BA5;
   color:  #174970;
 }
+#boton:active{
+  background: #3D9BA5;
+  color:  #174970;
+}
+/*Valid, invalid, visited*/

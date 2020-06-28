@@ -2,44 +2,48 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Crear Encuesta</title>
+    <title>El Aullido</title>
     <link rel="icon" href="../statics/media/logo_lobo.png">
+    <!--<link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.css">
+    La libreria de los iconos-->
+
     <!--Librería de font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <!--Enlace de google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Raleway:wght@100&display=swap" rel="stylesheet">
     <!--Hoja de diseño-->
-    <link rel="stylesheet" href="../statics/css/encuestas.css">
+    <link rel="stylesheet" href="../statics/css/inicio_sesion.css">
   </head>
   <body>
     <nav>
       <!--Botón para regresar al index-->
       <button type="button" id="regresar" name="button">Regresar</button>
     </nav>
-    <h1 id="title">Crear Encuesta</h1>
-    <form id="form_f" name="form1" method="post" action="../dynamics/php/enc2.php">
+    <h1 id="title">Inicia Sesión</h1>
+    <!--Formulario dividido en dos divs para darle mejor diseño-->
+    <form action="../dynamics/php/iniciar.php" method="post">
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
-        <div class="respuesta_r">
+        <div class="respuesta">
           <div class="icon">
-            <i class="fas fa-question-circle" id="symbol"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
           </div>
-        <label>Titulo de la encuesta:</label>
+        <label>Usuario:</label>
         </div>
-        <input type="text" class="input" placeholder="Título" autocomplete="off" name="titulo" required>
+        <input type='text' class="input" name='user' placeholder='E-mail, No. Cuenta, RFC' autocomplete = "off" required>
       </div>
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
-        <div class="respuesta_r">
+        <div class="respuesta">
           <div class="icon">
-            <i class="fas fa-question-circle" id="symbol"></i>
+            <i class="fa fa-lock" aria-hidden="true"></i>
           </div>
-        <label>N&uacute;mero de preguntas:</label>
+          <label>Contraseña:</label>
         </div>
-        <input type="number" class="input" placeholder="#" autocomplete="off" name="preguntas" required>
+        <input type='password' class="input" name='pass' placeholder='*******' autocomplete = "off" required>
       </div>
-        <input type="submit" name="Submit" id="enviar" value="Enviar">
+      <input id="boton" type='submit' value='Iniciar Sesión'>
     </form>
-    <script src="../dynamics/js/encuesta.js"></script>
+    <script src="../dynamics/js/inicio_sesion.js"></script>
   </body>
 </html>

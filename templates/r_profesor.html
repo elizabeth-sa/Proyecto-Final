@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>El Aullido</title>
+    <link rel="icon" href="../statics/media/logo_lobo.png">
+    <!--Librería de font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <!--Enlace de google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <!--Hoja de diseño-->
+    <link rel="stylesheet" href="../statics/css/registro.css">
+  </head>
+  <body>
+    <nav>
+      <!--Botón para regresar al menú de registros-->
+      <button type="button" id="regresar" name="button">Regresar</button>
+    </nav>
+    <h1 id="registrate">Regístrate</h1>
+    <h3 class="ask_r">¡Hola! Por favor ingrese sus datos correctamente.</h3>
+    <form id="form_f" action="../dynamics/php/registro.php" method="post">
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fas fa-id-card"></i>
+          </div>
+        <label>RFC:</label>
+        </div>
+        <input type='text' class="input" name='rfc' placeholder='FIRI8505137A3' autocomplete="off" pattern = '^[A-Z]{4}[0-9][0-9]([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])[A-Z1-9]{3}$' title="13 caracteres" required>
+      </div>
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+        <label>Fecha de nacimiento:</label>
+        </div>
+        <input type="date" class="input" id="fecha" name="fecha" autocomplete="off" title="dd/mm/aaaa" required value=""> <br>
+      </div>
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+        <label>Nombre:</label>
+        </div>
+        <input type='text' class="input" name='nombre' placeholder='Isauro' autocomplete="off" pattern='^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$' title="Solo letras" required>
+      </div>
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+        <label>Apellido paterno:</label>
+        </div>
+        <input type='text' class="input" name='app' placeholder='Figueroa' autocomplete="off" pattern='^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$' title="Solo letras" required>
+      </div>
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+        <label>Apellido materno:</label>
+        </div>
+        <input type='text' class="input" name='apm' placeholder='Rodríguez' autocomplete="off" pattern='^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$' title="Solo letras">
+      </div>
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+        <label>Número de trabajador:</label>
+        </div>
+        <input type='text' class="input" name='num' placeholder='666666' autocomplete="off" pattern='^[0-9]{6}' title="6 dígitos" required>
+      </div>
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+        <label>E-mail:</label>
+        </div>
+        <input type='text' class="input" name='correo' placeholder='profesor@gmail.com' autocomplete="off" pattern="^[!-Ý]+@[!-Ý]+\.[!-Ý]+$" title="Por lo menos arroba y dominio" required>
+      </div>
+      <!--Cada dato recogido esta dividido separado en un "renglón"-->
+      <div class="renglon">
+        <div class="respuesta_r">
+          <div class="icon">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </div>
+        <label>Contraseña:</label>
+        </div>
+        <input type='password' class="input" name='pass' placeholder='*******' autocomplete="off" minlength='7' maxlength='17' title="Más de 7 caracteres owo" required>
+      </div>
+      <input type='hidden' name='registro' value='profesor'>
+      <input id="boton" type='submit' value='Registrarme'>
+    </form>
+    <script src="../dynamics/js/r_forms.js"></script>
+  </body>
+</html>
