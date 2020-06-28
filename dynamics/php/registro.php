@@ -51,7 +51,7 @@
       }
       //Si ya existe un usuario asociado al numero de cuenta ingresado
       if($existe==1){
-        header("Location: ./respuesta.php");
+        echo "Cuenta existente";
       }
       //si todo esta en orden, puede insertar datos
       else {
@@ -64,7 +64,7 @@
         session_start();
         $_SESSION['usuario'] = $cuen;
         $_SESSION['tipo'] = "alumno";
-        //header("Location: ./perfil.php");
+        header("Location: ./perfil.php");
       }
     }
     //si es el primer registro inserta datos
@@ -78,7 +78,7 @@
       session_start();
       $_SESSION['usuario'] = $cuen;
       $_SESSION['tipo'] = "alumno";
-      //header("Location: ./perfil.php");
+      header("Location: ./perfil.php");
     }
   }
   //si el registro es de un profesor realiza lo siguiente
@@ -125,7 +125,7 @@
       }
       //Si ya existe un usuario asociado al numero de cuenta ingresado
       if($existe==1){
-        header("Location: ./respuesta.php");
+        echo "Cueta existente";
       }
       //si todo esta en orden, puede insertar datos
       else {

@@ -47,7 +47,7 @@
           </div>
         <label>CURP:</label>
         </div>
-        <input type='text' class="input" name='curp' placeholder='ABCD090900HDFABDC9' title="CURP" autocomplete="off" title="18 caracteres" required>
+        <input type='text' class="input" name='curp' placeholder='ABCD090900HDFABDC9' title="CURP" autocomplete="off" title="18 caracteres" pattern="[A-Z]{4}[0-9]{6}[H||M]{1}[A-Z]{5}[A-Z0-9]{1}[0-9]{1}" required>
       </div>
       <!--Cada dato recogido esta dividido separado en un "renglón"-->
       <div class="renglon">
